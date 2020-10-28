@@ -55,7 +55,6 @@ archives:
   format_overrides:
     - goos: windows
       format: zip
-  files: ["LICENSE"]
 checksum:
   name_template: "checksums.txt"
   algorithm: sha256
