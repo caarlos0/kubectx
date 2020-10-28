@@ -72,7 +72,11 @@ archives:
 checksum:
   name_template: "checksums.txt"
   algorithm: sha256
-release:
-  extra_files:
-    - glob: ./kubens
-    - glob: ./kubectx
+brews:
+- github:
+    owner: caarlos0
+    name: homebrew-tap
+  folder: Formula
+  install: |-
+    bin.install "kubens"
+    bin.install "kubectx"
