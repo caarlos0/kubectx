@@ -45,6 +45,10 @@ archives:
   builds:
     - kubectx
     - kubens
+  files:
+    - completion/*
+    - LICENSE
+    - README.md
   replacements:
     386: i386
     amd64: x86_64
