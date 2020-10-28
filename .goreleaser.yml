@@ -65,3 +65,9 @@ brews:
   install: |-
     bin.install "kubens"
     bin.install "kubectx"
+    bash_completion.install "completion/kubectx.bash" => "kubectx"
+    bash_completion.install "completion/kubens.bash" => "kubens"
+    zsh_completion.install "completion/kubectx.zsh" => "_kubectx"
+    zsh_completion.install "completion/kubens.zsh" => "_kubens"
+    fish_completion.install "completion/kubectx.fish"
+    fish_completion.install "completion/kubens.fish"
