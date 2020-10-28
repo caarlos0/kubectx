@@ -35,8 +35,7 @@ builds:
     - ppc64le
   goarm: [6, 7]
 archives:
-- id: kubectx-archive
-  name_template: |-
+- name_template: |-
     kubectx_{{ .Tag }}_{{ .Os }}_{{ .Arch -}}
     {{- with .Arm -}}
       {{- if (eq . "6") -}}hf
@@ -45,22 +44,6 @@ archives:
     {{- end -}}
   builds:
     - kubectx
-  replacements:
-    386: i386
-    amd64: x86_64
-  format_overrides:
-    - goos: windows
-      format: zip
-  files: ["LICENSE"]
-- id: kubens-archive
-  name_template: |-
-    kubens_{{ .Tag }}_{{ .Os }}_{{ .Arch -}}
-    {{- with .Arm -}}
-      {{- if (eq . "6") -}}hf
-      {{- else -}}v{{- . -}}
-      {{- end -}}
-    {{- end -}}
-  builds:
     - kubens
   replacements:
     386: i386
@@ -77,6 +60,8 @@ brews:
     owner: caarlos0
     name: homebrew-tap
   folder: Formula
+  description: 'kubectx and kubens are power tools for kubectl'
+  homepage: https://kubectx.dev
   install: |-
     bin.install "kubens"
     bin.install "kubectx"
